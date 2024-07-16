@@ -55,7 +55,7 @@ Instrucciones de Instalación
 
 		  pip install tweepy
 
-   Te va a pedir que actualices las funciones (Successfully installed pip-24.1.2):
+   Si te pide que actualices las funciones (install pip-24.1.2):
 
    sh
 
