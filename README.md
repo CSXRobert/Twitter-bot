@@ -49,19 +49,7 @@ Instrucciones de Instalación
 2- Instala las dependencias: Abre una terminal o línea de comandos y ejecuta los siguientes comandos
    para crear un entorno virtual (opcional) e instalar tweepy.
 
-   Crear un entorno virtual (opcional, pero recomendado):
-
-   sh
-
- 			python -m venv myenv   
-
-  (Responde YES)
-   
- 		  source myenv/bin/activate  
-
-   # En Windows usar
-		 myenv\Scripts\activate
-
+   EJECUTAR ESTE COMANDO EN EL TERMINAL
 
    sh
 
@@ -143,29 +131,29 @@ momento en el cual el proceso se reiniciará.
 
 6- Abre un archivo llamado "x-bot.py" y pega el siguiente código:
 
-	import time
-	import tweepy
-	import random
+    import tweepy
+    import time
+    import random
 
-	# Claves de la API de Twitter (reemplaza con tus propias claves)
-	API_KEY = 'TU_API_KEY_DE_TWITTER'
-	API_SECRET_KEY = 'TU_API_SECRET_KEY_DE_TWITTER'
-	ACCESS_TOKEN = 'TU_ACCESS_TOKEN_DE_TWITTER'
-	ACCESS_TOKEN_SECRET = 'TU_ACCESS_TOKEN_SECRET_DE_TWITTER'
-	BEARER_TOKEN = 'TU_BEARER_TOKEN_DE_TWITTER'
+    # Claves de la API de Twitter (reemplaza con tus propias claves)
+    API_KEY = 'TU_API_KEY_DE_TWITTER'
+    API_SECRET_KEY = 'TU_API_SECRET_KEY_DE_TWITTER'
+    ACCESS_TOKEN = 'TU_ACCESS_TOKEN_DE_TWITTER'
+    ACCESS_TOKEN_SECRET = 'TU_ACCESS_TOKEN_SECRET_DE_TWITTER'
+    BEARER_TOKEN = 'TU_BEARER_TOKEN_DE_TWITTER'
 
-	# Configura la conexión con Twitter usando la API V2
-	client = tweepy.Client(bearer_token=BEARER_TOKEN, consumer_key=API_KEY, consumer_secret=API_SECRET_KEY,
+    # Configura la conexión con Twitter usando la API V2
+    client = tweepy.Client(bearer_token=BEARER_TOKEN, consumer_key=API_KEY, consumer_secret=API_SECRET_KEY,
                        access_token=ACCESS_TOKEN, access_token_secret=ACCESS_TOKEN_SECRET)
 
-	# Función para leer el archivo de texto
-	def leer_archivo(archivo):
+    # Función para leer el archivo de texto
+    def leer_archivo(archivo):
     with open(archivo, 'r', encoding='utf-8') as file:
         contenido = file.readlines()
     return [linea.strip() for linea in contenido]
 
-	# Función para publicar un tweet cada 35 minutos
-	def tweet_diario():
+    # Función para publicar un tweet cada 35 minutos
+    def tweet_diario():
     tweets = leer_archivo('tweets.txt')
     frases = leer_archivo('frases.txt')
     total_tweets = len(tweets)
@@ -198,8 +186,9 @@ momento en el cual el proceso se reiniciará.
 
             time.sleep(35 * 60)  # Espera 35 minutos (35 * 60 segundos)
 
-	if __name__ == "__main__":
+    if __name__ == "__main__":
     tweet_diario()
+
 
 
 7- En el terminal ejecuta el siguiente comando:
